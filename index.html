@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bowling</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+    <script src="https://cdn.rawgit.com/zcanter/aframe-gradient-sky/master/dist/gradientsky.min.js"></script>
+    <script
+    src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+  <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+    
+    <script src="./ball.js"></script>
+  </head>
+  <body>
+    <a-scene id="scene" physics="friction:0.3">
+    
+      <!--Assets-->
+      <a-assets>        
+        <a-asset-item
+          id="pin"
+          src="./assets/pin/scene.gltf"
+        ></a-asset-item>
+        <img  id="texture" src="./assets/t.png">
+        <audio id="s" src="./assets/s.mp3"></audio>
+        <audio id="1s" src="./assets/ss.mp3"></audio>
+      </a-assets>
+      
+      <a-entity id="sound1" sound="src: #s; poolSize:2; autoplay: false; volume: 1;loop:false"></a-entity>
+      <a-entity id="sound2" sound="src: #1s; poolSize:2; autoplay: false; volume: 1;loop:false"></a-entity>
+      <a-sky
+        geometry="primitive: sphere;"
+        material="shader: gradient; bottomColor: white; topColor:-10 200 227;offset: 0.0001;"
+        radius="100"
+        theta-length="180"
+        side="double"
+       
+      ></a-sky>
+
+      <!--Camera and Cursor-->
+      <a-entity
+        id="camera"
+        camera
+        position="0 2 0.9"
+        wasd-controls
+        look-controls="pointerLockEnabled: false"        
+      >
+        
+        <a-cursor></a-cursor>        
+      </a-entity>
+
+      <!--Ball-->
+      <a-entity ball></a-entity>
+
+      <!--Bowling Arena-->
+      <a-plane
+        id="ground"
+        repeat="5 5"
+        position="0 1 -6"
+        rotation="-90 0 0"
+        height="13"
+        width="5"
+        src="#texture"
+        static-body
+        visible="true"
+      >
+      </a-plane>
+      <a-plane
+        id="plane1"
+        repeat="5 5"
+        position="-3 1 -6"
+        rotation="-90 0 0"
+        height="13"
+        width="1"
+        color="red"
+        static-body
+        visible="true"
+      >
+      </a-plane>
+      <a-plane
+      id="plane2"
+      repeat="5 5"
+      position="3 1 -6"
+      rotation="-90 0 0"
+      height="13"
+      width="1"
+      color="red"
+      static-body
+      visible="true"
+    >
+    </a-plane>
+    <a-plane
+      id="plane3"
+      repeat="5 5"
+      position="0 1 1.5"
+      rotation="-90 0 0"
+      height="2"
+      width="7"
+      color="red"
+      static-body
+      visible="true"
+    >
+    </a-plane> 
+    <a-entity
+    id="title"
+    position="0.6 5.5 -13"
+    text="font: exo2bold; align: center; width: 30; color: red; value: Virtual-Bowling"
+  ></a-entity>
+
+      <!--Pins-->
+      <a-entity dynamic-body="mass:0.5" id="pin1" position="-2 1 -12.3" gltf-model="#pin" scale = "0.7 0.7 0.7" ></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin2" position="0 1 -12.3" gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin3" position="2 1 -12.3"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin4" position="-1 1 -12.3"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin5" position="1 1 -12.3"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin6" position="0.5 1 -12.1"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin7" position="1.5 1 -12.1"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin8" position="-0.5 1 -12.1"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+
+      <a-entity dynamic-body="mass:0.5" id="pin9" position="-1.5 1 -12.1"  gltf-model="#pin" scale = "0.7 0.7 0.7"></a-entity>
+    </a-scene>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Dusty Bowling Pin
+* source:	https://sketchfab.com/3d-models/dusty-bowling-pin-0fcc8927949147238065614c75f892ab
+* author:	louis.rapine (https://sketchfab.com/louis.rapine)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Dusty Bowling Pin" (https://sketchfab.com/3d-models/dusty-bowling-pin-0fcc8927949147238065614c75f892ab) by louis.rapine (https://sketchfab.com/louis.rapine) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
